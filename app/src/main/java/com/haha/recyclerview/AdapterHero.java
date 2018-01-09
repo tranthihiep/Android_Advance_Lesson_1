@@ -27,7 +27,6 @@ public class AdapterHero extends RecyclerView.Adapter<AdapterHero.ViewHolder>{
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater =  LayoutInflater.from(parent.getContext());
         View itemView = layoutInflater.inflate(R.layout.item_grow,parent,false);
-
         return new ViewHolder(itemView);
     }
 
@@ -44,7 +43,6 @@ public class AdapterHero extends RecyclerView.Adapter<AdapterHero.ViewHolder>{
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-
         TextView txtNameHero;
         ImageView imageHero;
 
