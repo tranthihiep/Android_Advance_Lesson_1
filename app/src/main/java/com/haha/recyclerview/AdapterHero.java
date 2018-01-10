@@ -15,13 +15,14 @@ import java.util.ArrayList;
  */
 
 public class AdapterHero extends RecyclerView.Adapter<AdapterHero.ViewHolder>{
-    ArrayList<DataHero> dataHeros;
-    Context context;
+    private ArrayList<DataHero> dataHeros;
+    private  Context context;
 
     public AdapterHero(ArrayList<DataHero> dataHeros, Context context) {
         this.dataHeros = dataHeros;
         this.context = context;
     }
+
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -32,9 +33,7 @@ public class AdapterHero extends RecyclerView.Adapter<AdapterHero.ViewHolder>{
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-
-        holder.txtNameHero.setText(dataHeros.get(position).getName());
-        holder.imageHero.setImageResource(dataHeros.get(position).getImage());
+        holder.setData(position);
     }
 
     @Override
@@ -45,11 +44,14 @@ public class AdapterHero extends RecyclerView.Adapter<AdapterHero.ViewHolder>{
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView txtNameHero;
         ImageView imageHero;
-
         public ViewHolder(View itemView) {
             super(itemView);
             txtNameHero =(TextView) itemView.findViewById(R.id.txtNameHero);
             imageHero = (ImageView) itemView.findViewById(R.id.imgHero);
+        }
+        public void setData(int pos){
+            txtNameHero.setText(dataHeros.get(pos).getName());
+            imageHero.setImageResource(dataHeros.get(pos).getImage());
         }
     }
 }
