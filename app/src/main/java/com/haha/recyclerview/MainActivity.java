@@ -10,14 +10,14 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ArrayList<DataHero> dataHeros;
+    private ArrayList<DataHero> mDataHeros;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
-        initView(recyclerView);
-        addHero(recyclerView);
+        RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview);
+        initView(mRecyclerView);
+        addHero(mRecyclerView);
     }
     private void initView(RecyclerView recyclerView){
         recyclerView.setHasFixedSize(true);
@@ -27,17 +27,17 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.addItemDecoration(dividerItemDecoration);
     }
     private  void addHero(RecyclerView recyclerView){
-        dataHeros = new ArrayList<>();
-        dataHeros.add(new DataHero(R.drawable.hero1,"Hero 1"));
-        dataHeros.add(new DataHero(R.drawable.hero2,"Hero 2"));
-        dataHeros.add(new DataHero(R.drawable.hero3,"Hero 3"));
-        dataHeros.add(new DataHero(R.drawable.hero4,"Hero 4"));
-        dataHeros.add(new DataHero(R.drawable.hero5,"Hero 5"));
-        dataHeros.add(new DataHero(R.drawable.hero6,"Hero 6"));
-        dataHeros.add(new DataHero(R.drawable.hero6,"Hero 7"));
-        dataHeros.add(new DataHero(R.drawable.hero8,"Hero 8"));
-        AdapterHero shopAdapter = new AdapterHero(dataHeros,getApplicationContext());
-        recyclerView.setAdapter(shopAdapter);
+        mDataHeros = new ArrayList<>();
+        mDataHeros.add(new DataHero(R.drawable.hero1,"Hero 1"));
+        mDataHeros.add(new DataHero(R.drawable.hero2,"Hero 2"));
+        mDataHeros.add(new DataHero(R.drawable.hero3,"Hero 3"));
+        mDataHeros.add(new DataHero(R.drawable.hero4,"Hero 4"));
+        mDataHeros.add(new DataHero(R.drawable.hero5,"Hero 5"));
+        mDataHeros.add(new DataHero(R.drawable.hero6,"Hero 6"));
+        mDataHeros.add(new DataHero(R.drawable.hero6,"Hero 7"));
+        mDataHeros.add(new DataHero(R.drawable.hero8,"Hero 8"));
+        AdapterHero mAdapterHero = new AdapterHero(mDataHeros,getApplicationContext());
+        recyclerView.setAdapter(mAdapterHero);
 
     }
 }

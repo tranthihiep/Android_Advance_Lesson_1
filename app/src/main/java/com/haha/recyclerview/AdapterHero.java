@@ -10,16 +10,18 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import static com.haha.recyclerview.R.id.txtNameHero;
+
 /**
  * Created by trant on 03/01/2018.
  */
 
 public class AdapterHero extends RecyclerView.Adapter<AdapterHero.ViewHolder>{
-    private ArrayList<DataHero> dataHeros;
+    private ArrayList<DataHero> mDataHeros;
     private  Context context;
 
     public AdapterHero(ArrayList<DataHero> dataHeros, Context context) {
-        this.dataHeros = dataHeros;
+        this.mDataHeros = dataHeros;
         this.context = context;
     }
 
@@ -38,20 +40,20 @@ public class AdapterHero extends RecyclerView.Adapter<AdapterHero.ViewHolder>{
 
     @Override
     public int getItemCount() {
-        return dataHeros.size();
+        return mDataHeros.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView txtNameHero;
-        ImageView imageHero;
+        TextView mTxtNameHero;
+        ImageView mImageHero;
         public ViewHolder(View itemView) {
             super(itemView);
-            txtNameHero =(TextView) itemView.findViewById(R.id.txtNameHero);
-            imageHero = (ImageView) itemView.findViewById(R.id.imgHero);
+            mTxtNameHero =(TextView) itemView.findViewById(txtNameHero);
+            mImageHero = (ImageView) itemView.findViewById(R.id.imgHero);
         }
         public void setData(int pos){
-            txtNameHero.setText(dataHeros.get(pos).getName());
-            imageHero.setImageResource(dataHeros.get(pos).getImage());
+            mTxtNameHero.setText(mDataHeros.get(pos).getName());
+            mImageHero.setImageResource(mDataHeros.get(pos).getImage());
         }
     }
 }
